@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 public class LogDemoController {
 
   private final LogDemoService logDemoService;
-  private final ObjectProvider<MyLogger> myLoggerProvider;
-//  private final MyLogger myLogger;
+//  private final ObjectProvider<MyLogger> myLoggerProvider;
+  private final MyLogger myLogger;
 
   //spring interceptor
   @RequestMapping("log-demo")
@@ -25,7 +25,7 @@ public class LogDemoController {
   public String logDemo(HttpServletRequest request) {
     //요기서 스코프 요청
     //생성되는 시점
-    MyLogger myLogger = myLoggerProvider.getObject();
+//    MyLogger myLogger = myLogger.getObject();
     String requestURL = request.getRequestURL().toString();
     myLogger.setRequestURL(requestURL);
 
